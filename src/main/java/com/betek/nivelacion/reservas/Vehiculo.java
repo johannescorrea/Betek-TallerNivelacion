@@ -1,5 +1,7 @@
 package com.betek.nivelacion.reservas;
 
+import java.util.Objects;
+
 public abstract class Vehiculo implements Alquilable {
 
     private String matricula;
@@ -27,7 +29,7 @@ public abstract class Vehiculo implements Alquilable {
         return modelo;
     }
 
-    
+
     @Override
     public void alquilar() {
         if (!estaAlquilado){// false
@@ -46,5 +48,21 @@ public abstract class Vehiculo implements Alquilable {
         } else {
             System.out.println("El vehiculo no estaba alquilado");
         }
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vehiculo vehiculo)) return false;
+
+        return Objects.equals(matricula, vehiculo.matricula) && Objects.equals(marca, vehiculo.marca) && Objects.equals(modelo, vehiculo.modelo);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(matricula);
+        result = 31 * result + Objects.hashCode(marca);
+        result = 31 * result + Objects.hashCode(modelo);
+        return result;
     }
 }
