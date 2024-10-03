@@ -1,4 +1,4 @@
-package com.betek.nivelacion.reservas;
+package com.betek.nivelacion.reservas.model;
 
 public class Moto extends Vehiculo {
 
