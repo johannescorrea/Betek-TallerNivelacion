@@ -9,6 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Vehiculo vh2 = new Coche();
+        String matricula = vh2.getMatricula();
+        System.out.println(matricula.length());
+
         Usuario usuario1 = new Usuario("CC", "12345678A", "Pepe Perez", "email@to.com");
         Vehiculo v1 = new Coche("1234ABC", "Seat", "Ibiza");
 

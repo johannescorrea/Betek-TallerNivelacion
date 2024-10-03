@@ -10,6 +10,9 @@ public abstract class Vehiculo implements Alquilable {
 
     private boolean estaAlquilado;
 
+    public Vehiculo() {
+
+    }
 
     public Vehiculo(String matricula, String marca, String modelo) {
         this.matricula = matricula;

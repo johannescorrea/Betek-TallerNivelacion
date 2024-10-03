@@ -23,6 +23,22 @@ public class Reserva {
         this.fechaFin = fechaFin;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public LocalDate  getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
+
     //Metodo para iniciar una reserva con un vehiculo asignado en la fecha actual.
     public void iniciarReserva() {
         if(vehiculo != null) {
@@ -65,10 +81,6 @@ public class Reserva {
         }
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
@@ -90,4 +102,5 @@ public class Reserva {
         }
         return result;
     }
+
 }
