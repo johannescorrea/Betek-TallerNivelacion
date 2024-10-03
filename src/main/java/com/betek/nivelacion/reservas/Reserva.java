@@ -74,15 +74,20 @@ public class Reserva {
         if (this == o) return true;
         if (!(o instanceof Reserva reserva)) return false;
 
-        return usuario.equals(reserva.usuario) && vehiculo.equals(reserva.vehiculo) && fechaInicio.equals(reserva.fechaInicio) && Objects.equals(fechaFin, reserva.fechaFin);
+        return usuario.equals(reserva.usuario) && vehiculo.equals(reserva.vehiculo) &&
+                Objects.equals(fechaInicio, reserva.fechaInicio) && Objects.equals(fechaFin, reserva.fechaFin);
     }
 
     @Override
     public int hashCode() {
         int result = usuario.hashCode();
         result = 31 * result + vehiculo.hashCode();
-        result = 31 * result + fechaInicio.hashCode();
-        result = 31 * result + Objects.hashCode(fechaFin);
+        if (fechaInicio != null) {
+            result = 31 * result + fechaInicio.hashCode();
+        }
+        if (fechaFin != null) {
+            result = 31 * result + Objects.hashCode(fechaFin);
+        }
         return result;
     }
 }

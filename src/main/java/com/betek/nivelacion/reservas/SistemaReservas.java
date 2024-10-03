@@ -1,13 +1,13 @@
 package com.betek.nivelacion.reservas;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class SistemaReservas {
 
-    private Map<Usuario, List<Reserva>> mapaReservas;
+    private Map<Usuario, Set<Reserva>> mapaReservas;
 
     public SistemaReservas() {
         mapaReservas = new HashMap<>();
@@ -21,7 +21,7 @@ public class SistemaReservas {
 
     public void registrarUsuario(Usuario usuario) {
         if (!mapaReservas.containsKey(usuario)) {
-            mapaReservas.put(usuario, new ArrayList<>());
+            mapaReservas.put(usuario, new HashSet<>());
         }
     }
 
@@ -35,7 +35,7 @@ public class SistemaReservas {
     }
 
     // Buscar una reserva por nombre de usuario
-    public List<Reserva> buscarReservasPorUsuario(Usuario usuario) {
+    public Set<Reserva> buscarReservasPorUsuario(Usuario usuario) {
         return mapaReservas.get(usuario);
     }
 
@@ -52,7 +52,7 @@ public class SistemaReservas {
     // Mostrar todas las reservas
     public void mostrarReservas() {
         for (Usuario nombreUsuario : mapaReservas.keySet()) {
-            System.out.println("Usuario: " + nombreUsuario.getNombre() + ", " + mapaReservas.get(nombreUsuario));
+            System.out.println("Usuario: " + nombreUsuario.getNombre() + ", " + mapaReservas.get(nombreUsuario).size());
         }
     }
 }
