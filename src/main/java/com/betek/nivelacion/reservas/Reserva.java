@@ -1,6 +1,7 @@
 package com.betek.nivelacion.reservas;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Reserva {
 
@@ -64,4 +65,29 @@ public class Reserva {
         }
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Reserva reserva)) return false;
+
+        return usuario.equals(reserva.usuario) && vehiculo.equals(reserva.vehiculo) &&
+                Objects.equals(fechaInicio, reserva.fechaInicio) && Objects.equals(fechaFin, reserva.fechaFin);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = usuario.hashCode();
+        result = 31 * result + vehiculo.hashCode();
+        if (fechaInicio != null) {
+            result = 31 * result + fechaInicio.hashCode();
+        }
+        if (fechaFin != null) {
+            result = 31 * result + Objects.hashCode(fechaFin);
+        }
+        return result;
+    }
 }
