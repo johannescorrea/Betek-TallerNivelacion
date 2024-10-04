@@ -1,4 +1,4 @@
-package com.betek.nivelacion.reservas;
+package com.betek.nivelacion.reservas.model;
 
 import java.util.Objects;
 

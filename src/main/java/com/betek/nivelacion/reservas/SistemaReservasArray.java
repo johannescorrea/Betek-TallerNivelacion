@@ -1,6 +1,9 @@
 package com.betek.nivelacion.reservas;
 
-import java.time.LocalDate;
+import com.betek.nivelacion.reservas.exceptions.MaxCapacityException;
+import com.betek.nivelacion.reservas.exceptions.MaxCapacityRuntimeException;
+import com.betek.nivelacion.reservas.model.Reserva;
+import com.betek.nivelacion.reservas.model.Usuario;
 
 public class SistemaReservasArray {
 
@@ -16,11 +19,21 @@ public class SistemaReservasArray {
     }
 
     // Agregar una reserva
-    public void agregarReserva(Reserva reserva) {
+    public void agregarReserva(Reserva reserva) throws MaxCapacityException {
         if (contador < reservas.length) {
             reservas[contador++] = reserva;
         } else {
             System.out.println("Capacidad máxima alcanzada.");
+            throw new MaxCapacityException("Capacidad máxima alcanzada.");
+        }
+    }
+
+    public void agregarReservaRuntime(Reserva reserva) {
+        if (contador < reservas.length) {
+            reservas[contador++] = reserva;
+        } else {
+            System.out.println("Capacidad máxima alcanzada.");
+            throw new MaxCapacityRuntimeException("Capacidad máxima alcanzada.");
         }
     }
 
@@ -52,5 +65,9 @@ public class SistemaReservasArray {
                 System.out.println(reservas[i].toString());
             }
         }
+    }
+
+    public int getNumeroReservas() {
+        return contador;
     }
 }

@@ -1,5 +1,9 @@
 package com.betek.nivelacion.reservas;
 
+import com.betek.nivelacion.reservas.model.Reserva;
+import com.betek.nivelacion.reservas.model.Usuario;
+import com.betek.nivelacion.reservas.model.Vehiculo;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
