@@ -6,8 +6,8 @@ public class Coche extends Vehiculo {
         super();
     }
 
-    public Coche(String matricula, String marca, String modelo) {
-        super(matricula, marca, modelo);
+    public Coche(String matricula, String marca, String modelo, CategoriaVehiculo categoria) {
+        super(matricula, marca, modelo, categoria);
     }
 
 }

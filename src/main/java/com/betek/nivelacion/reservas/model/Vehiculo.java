@@ -1,12 +1,18 @@
 package com.betek.nivelacion.reservas.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public abstract class Vehiculo implements Alquilable {
 
     private String matricula;
     private String marca;
     private String modelo;
+    private CategoriaVehiculo categoriaVehiculo;
 
     private boolean estaAlquilado;
 
@@ -14,22 +20,11 @@ public abstract class Vehiculo implements Alquilable {
 
     }
 
-    public Vehiculo(String matricula, String marca, String modelo) {
+    public Vehiculo(String matricula, String marca, String modelo, CategoriaVehiculo categoriaVehiculo) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getModelo() {
-        return modelo;
+        this.categoriaVehiculo = categoriaVehiculo;
     }
 
 

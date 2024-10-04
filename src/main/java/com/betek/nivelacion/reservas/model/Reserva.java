@@ -23,6 +23,13 @@ public class Reserva {
         this.fechaFin = fechaFin;
     }
 
+    public Reserva(Usuario usuario, Vehiculo coche, LocalDate now, LocalDate localDate) {
+        this.usuario = usuario;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.vehiculo = vehiculo;
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }

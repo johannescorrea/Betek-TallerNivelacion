@@ -12,6 +12,7 @@ public class Usuario {
     private String numeroDocumento;
     private String nombre;
     private String email;
+    private TipoUsuario tipoUsuario;
 
     //constructor
     public Usuario(String tipoDocumento, String numeroDocumento, String nombre, String email) {
@@ -19,6 +20,14 @@ public class Usuario {
         this.numeroDocumento = numeroDocumento;
         this.nombre = nombre;
         this.email = email;
+    }
+
+    public Usuario(String tipoDocumento, String numeroDocumento, String nombre, String email, TipoUsuario tipoUsuario) {
+        this.tipoDocumento = tipoDocumento;
+        this.numeroDocumento = numeroDocumento;
+        this.nombre = nombre;
+        this.email = email;
+        this.tipoUsuario = tipoUsuario;
     }
 
     //get == ver el contenido de la variable
@@ -55,6 +64,14 @@ public class Usuario {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 
     @Override
