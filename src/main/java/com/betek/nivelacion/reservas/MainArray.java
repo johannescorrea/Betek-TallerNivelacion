@@ -2,6 +2,7 @@ package com.betek.nivelacion.reservas;
 
 import com.betek.nivelacion.reservas.exceptions.MaxCapacityException;
 import com.betek.nivelacion.reservas.exceptions.MaxCapacityRuntimeException;
+import com.betek.nivelacion.reservas.model.CategoriaVehiculo;
 import com.betek.nivelacion.reservas.model.Coche;
 import com.betek.nivelacion.reservas.model.Reserva;
 import com.betek.nivelacion.reservas.model.Usuario;
@@ -13,7 +14,8 @@ public class MainArray {
         SistemaReservasArray sistemaReservas = new SistemaReservasArray(0);
 
         Usuario usuario1 = new Usuario("CC", "12345678A", "Pepe Perez", "email@to.com");
-        Vehiculo v1 = new Coche("1234ABC", "Seat", "Ibiza");
+        CategoriaVehiculo categoriaVehiculo = new CategoriaVehiculo("SUV", "Suburvan Vehiculo", 100.0); // Base price 100
+        Vehiculo v1 = new Coche("1234ABC", "Seat", "Ibiza", categoriaVehiculo);
 
         Reserva reserva1 = new Reserva(usuario1, v1);
         try {

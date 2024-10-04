@@ -23,7 +23,7 @@ public class Reserva {
         this.fechaFin = fechaFin;
     }
 
-    public Reserva(Usuario usuario, Vehiculo coche, LocalDate now, LocalDate localDate) {
+    public Reserva(Usuario usuario, Vehiculo vehiculo, LocalDate fechaInicio, LocalDate fechaFin) {
         this.usuario = usuario;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
@@ -68,7 +68,9 @@ public class Reserva {
     public void finalizarReserva() {
         if(vehiculo != null && fechaInicio != null) {
             vehiculo.devolverVehiculo();
-            this.fechaFin = LocalDate.now();
+            if(fechaFin == null) {
+                fechaFin = LocalDate.now();
+            }
         } else {
             System.out.println("No se puede finalizar la reserva");
         }

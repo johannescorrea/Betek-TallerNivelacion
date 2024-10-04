@@ -29,7 +29,7 @@ public class Main {
         sistemaReservas.agregarCategoriaVehiculo(categoriaVehiculo);
 
         // Create Usuario
-        Usuario usuario = new Usuario("DNI", "12345678", "John Doe", "john.doe@example.com");
+        Usuario usuario = new Usuario("DNI", "12345678", "John Doe", "john.doe@example.com", tipoUsuario);
         sistemaReservas.registrarUsuario(usuario);
 
         // Create Coche

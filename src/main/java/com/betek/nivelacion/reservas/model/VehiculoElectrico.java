@@ -5,8 +5,8 @@ public class VehiculoElectrico extends Vehiculo  {
     private int autonomiaBateria;
     private int capacidadBateria;
 
-    public VehiculoElectrico(String matricula, String marca, String modelo, int autonomia, int capacidadBateria) {
-        super(matricula, marca, modelo);
+    public VehiculoElectrico(String matricula, String marca, String modelo, CategoriaVehiculo categoriaVehiculo, int autonomia, int capacidadBateria) {
+        super(matricula, marca, modelo, categoriaVehiculo);
         this.autonomiaBateria = autonomia;
         this.capacidadBateria = capacidadBateria;
     }

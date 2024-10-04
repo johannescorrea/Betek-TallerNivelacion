@@ -173,7 +173,7 @@ public class SistemaReservas {
 
     public Factura finalizarReserva(Reserva reserva) {
         // Call devolverVehiculo method
-        reserva.getVehiculo().devolverVehiculo();
+        reserva.finalizarReserva();
 
         // Calculate final price
         double precioFinal = calcularPrecioFinal(reserva);
