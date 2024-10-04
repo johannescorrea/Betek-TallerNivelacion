@@ -10,7 +10,7 @@ import com.betek.nivelacion.reservas.model.Vehiculo;
 public class MainArray {
 
     public static void main(String[] args)  {
-        SistemaReservasArray sistemaReservas = new SistemaReservasArray(2);
+        SistemaReservasArray sistemaReservas = new SistemaReservasArray(0);
 
         Usuario usuario1 = new Usuario("CC", "12345678A", "Pepe Perez", "email@to.com");
         Vehiculo v1 = new Coche("1234ABC", "Seat", "Ibiza");

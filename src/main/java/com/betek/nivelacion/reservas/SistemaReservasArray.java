@@ -66,4 +66,8 @@ public class SistemaReservasArray {
             }
         }
     }
+
+    public int getNumeroReservas() {
+        return contador;
+    }
 }
