@@ -21,7 +21,7 @@ public class Main {
         SistemaReservas sistemaReservas = new SistemaReservas();
 
         // Create TipoUsuario
-        TipoUsuario tipoUsuario = new TipoUsuario("Regular", "Regular users", 0.1); // 10% discount
+        TipoUsuario tipoUsuario = new TipoUsuario(1, "Regular", "Regular users", 0.1); // 10% discount
         sistemaReservas.agregarTipoUsuario(tipoUsuario);
 
         // Create CategoriaVehiculo
